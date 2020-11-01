@@ -1,0 +1,24 @@
+<h1><%= @company.name %></h1>
+<br>
+
+<h3>Office Locations</h3>
+<ul>
+<% @company.offices.each do |office| %>
+    <li><%= office.building.name %>- Floor: <%= office.floor %></li>
+<% end %>
+</ul>
+<h3>Company Employees</h3>
+<ul>
+<% @company.employees.each do |employee| %>
+    <li><%= employee.name %> <%= employee.title %></li>
+<% end %>
+</ul>
+<br>
+
+<%= render "employees/form" %>
+
+
+
+
+
+

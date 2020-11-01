@@ -1,0 +1,15 @@
+<%= form_for @employee do |f| %>
+    <h3>Add New Employee</h3>
+    <%= f.label "Employee Name" %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label "Title" %><br>
+    <%= f.text_field :title %><br>
+    <%= f.hidden_field :company_id, value: @company.id %><br>
+    <%= f.submit %>
+<% end %><br>
+
+<%= form_for @employee do |f| %>
+<%= f.label "Employees" %>
+<%= f.collection_select :id, @employees.all, :id, :name %>
+<%= button_to employee_path(@employee), method: :delete %>
+<% end %>
