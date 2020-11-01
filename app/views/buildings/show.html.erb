@@ -1,0 +1,22 @@
+<h1><%= @building.name %> </h1>
+
+<label>Resident Companies:</label>
+<ul>   
+
+<% @uniq_comp.each do |company| %>
+    <li><%= company %></li>
+<% end %>
+</ul>
+<br>
+<label>Current Available Floors: </label>
+<% @building.number_of_floors_available.each do |floor| %>
+    <%= floor %>
+<% end %>
+<p> Building Total Rent: $<%= @building.rent_money%></p>
+
+<%= link_to "Update Building", edit_building_path %><br>
+
+<%= link_to "Building Index", buildings_path %>
+    
+
+
